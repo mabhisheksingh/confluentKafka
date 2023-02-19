@@ -1,3 +1,4 @@
 /logs/*
 /data/*
 /share/java/*/*.jar
+bin/nohup.out

@@ -9,7 +9,7 @@
   944  cd bin
   945  nohup ./kafka-server-start ../etc/kafka/server.properties &
   946  jps
-  947  ./kafka-console-consumer --bootstrap-server 172.29.207.104:9092 --from-beginning --topic connect-testjps
+  947  ./kafka-console-consumer --bootstrap-server 172.20.231.228:9092 --from-beginning --topic connect-testjps
   948  ./kafka-console-consumer --bootstrap-server 172.29.207.104:9092 --from-beginning --topic connect-test
   949  ./kafka-console-consumer --bootstrap-server 172.29.207.42:9092 --from-beginning --topic connect-test
   950  clear
@@ -19,14 +19,15 @@
   954  jps
   955  clear
   956  ./kafka-console-consumer --bootstrap-server 172.29.207.42:9092 --from-beginning --topic connect-test
-  957  ./kafka-topics --bootstrap-server 172.29.207.104:9092 --delete --topic connect-test
+  957  ./kafka-topics --bootstrap-server 172.20.231.228:9092 --delete --topic connect-test
   958  ip a | grep eth0
   959  ./kafka-topics --bootstrap-server 172.20.231.228:9092 --delete --topic connect-test
-  960  ./kafka-topics --bootstrap-server 172.29.207.42:9092 --list
+  960  ./kafka-topics --bootstrap-server 172.20.226.44:9092 --list
   961  ./kafka-topics --bootstrap-server 172.29.207.42:9092 --delete --topic __consumer_offsets
   962  ./kafka-topics --bootstrap-server 172.29.207.42:9092 --delete --topic __schemas
   963  ./kafka-topics --bootstrap-server 172.29.207.42:9092 --delete --topic _schemas
   964  ./kafka-topics --bootstrap-server 172.20.231.228:9092 --create --topic connect-test --config cleanup.policy=compact
+./connect-standalone ../etc/kafka/connect-standalone.properties ../etc/kafka/connect-file-source.properties ../etc/kafka/connect-file-sink.properties 
 ```
 Confluent offers a real-time data platform built around Apache Kafka.
 
